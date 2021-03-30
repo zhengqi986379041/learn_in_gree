@@ -11,3 +11,4 @@ class TestRequests(object):
         logging.info(json.dumps(r.json(), indent=2))
         #加一条备注 20210330 123456
         logging.info(r.text)
+        #哈哈哈哈哈
