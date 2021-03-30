@@ -16,7 +16,7 @@ runner = HTMLTestRunner(
 )
 runner.run(s)
 # 日志生成还有问题
-#加一条备注123
+#加一条备注123456
 
 # 为什么登录页执行except时会执行到封装里except的截图操作
 
