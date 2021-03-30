@@ -2,7 +2,6 @@ import requests
 import logging
 import pytest
 import json
-
 class TestRequests(object):
     logging.basicConfig(level=logging.INFO)
     def test_get(self):
@@ -10,3 +9,4 @@ class TestRequests(object):
         logging.info(r)
         logging.info(r.text)
         logging.info(json.dumps(r.json(), indent=2))
+        #加一条备注 20210330
