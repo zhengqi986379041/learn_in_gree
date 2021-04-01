@@ -5,26 +5,13 @@ class LoginPageLocator:
     """
     登录页面
     """
-    # # 切换账号密码登录
-    # passwd_login_style = (By.XPATH, '/html/body/div/div[1]/div/div[1]/div[2]/div[2]')
-    # # 账号输入框
-    # name_text = (By.XPATH, '//*[@id="app"]/div[1]/div/div[1]/div[3]/div/div[1]/div/input')
-    # # 密码输入框
-    # passwd_text = (By.XPATH, '//*[@id="app"]/div[1]/div/div[1]/div[3]/div/div[2]/div/input')
-    # # 登录按钮
-    # login_button = (By.XPATH, '//*[@id="app"]/div[1]/div/div[1]/div[3]/div/p[1]')
-    # # 错误提示
-    # errorMsg_from_loginArea = (By.XPATH, '//div[@class="van-toast__text"]')
-    # # 注册入口
-    # register_enter = (By.XPATH, '//*[@id="app"]/div[1]/div/div[1]/div[3]/div/a')
-    # # 记住密码
-    # remember_passwd = (By.XPATH, '/html/body/div/div[1]/div/div[1]/div[3]/div/div[3]/label')
-    password_login_button = (By.XPATH, '/html/body/div/div[1]/div/div[5]/div[2]/div')
-    user_name = (By.XPATH, '/html/body/div/div[1]/div/div[2]/div[1]/div[2]/div/input')
-    pass_word = (By.XPATH, '/html/body/div/div[1]/div/div[2]/div[2]/div[2]/div/input')
-    login_button = (By.XPATH, '/html/body/div/div[1]/div/div[3]/button')
-    phone_name = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div[2]/div/input')
-    code_login_button = (By.XPATH, '/html/body/div[1]/div[1]/div/div[3]/button')
+    password_login_button = (By.XPATH, '/html/body/div/div[1]/div/div[5]/div[2]/div')# 切换密码登录按钮
+    user_name = (By.XPATH, '/html/body/div/div[1]/div/div[2]/div[1]/div[2]/div/input')# 密码登录的用户名
+    pass_word = (By.XPATH, '/html/body/div/div[1]/div/div[2]/div[2]/div[2]/div/input')# 密码登录的密码
+    login_button = (By.XPATH, '/html/body/div/div[1]/div/div[3]/button')# 密码登录的登录按钮
+    phone_name = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div[2]/div/input')# 验证码登录的手机号
+    code_login_button = (By.XPATH, '/html/body/div[1]/div[1]/div/div[3]/button')# 验证码登录获取验证码登录按钮
+    # 验证码登录的验证码数字按钮
     yi = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[1]/div')
     er = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[2]/div')
     san = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[3]/div')
@@ -35,3 +22,5 @@ class LoginPageLocator:
     ba = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[8]/div')
     jiu = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[9]/div')
     ling = (By.XPATH, '/html/body/div[1]/div[1]/div/div[2]/div/div/div[11]/div')
+    error_login_toast = (By.XPATH, '/html/body/div[2]/div')# 异常登录的toast提示
+

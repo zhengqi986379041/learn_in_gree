@@ -18,7 +18,7 @@ def access_web():
     options.add_experimental_option('useAutomationExtension', False)
     options.add_experimental_option('excludeSwitches', ['enable-automation'])
     driver = webdriver.Chrome(executable_path = 'D:\path\chromedriver.exe',chrome_options=options)
-    driver.get(CD.web_password_login_url)
+    driver.get(CD.login_url)
     lg = LoginPage(driver)
     yield (driver, lg) # 可以将这两个参数传出去，类似于return
     # 后置操作

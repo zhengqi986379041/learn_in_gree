@@ -1,7 +1,7 @@
 from PageObjects.isOrder_page import IsOrderPage
 from PageObjects.login_page import LoginPage
 from PageObjects.paySuccess_page import PaySuccessPage
-from TestDatas import login_datas as LD
+from TestDatas.test_login import login_datas as LD
 from PageObjects.productDetails_page import ProductDetailsPage
 import time
 

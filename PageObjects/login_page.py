@@ -8,6 +8,30 @@ class LoginPage(BasePage):
     """
     登录页面
     """
+    def error_login(self, username, passwd):
+        doc = '登录页面_登录功能_异常登录'
+        try:
+            self.wait_eleVisible(loc.password_login_button, wait_times = 3, doc=doc)
+            time.sleep(1)
+            self.click_element(loc.password_login_button, doc=doc)
+            time.sleep(1)
+        except:
+            pass
+        self.clear_text(loc.user_name, doc=doc)
+        self.clear_text(loc.pass_word, doc=doc)
+        self.input_text(loc.user_name, username, doc=doc)
+        self.input_text(loc.pass_word, passwd, doc=doc)
+        self.click_element(loc.login_button, doc=doc)
+    def check_toast(self,check):
+        doc = '登录页面_登录功能_异常登录_check'
+        self.wait_eleVisible(loc.error_login_toast, doc=doc)
+        try:
+            if self.get_text(loc.error_login_toast, doc=doc) == check:
+                return True
+        except:
+            return False
+
+
     def password_login(self, username, passwd):
         """
         登录操作
@@ -15,14 +39,20 @@ class LoginPage(BasePage):
         :param passwd: 密码
         :return: None
         """
-        doc = '登录页面_登录功能_登录操作'
+        doc = '登录页面_登录功能_正确登录'
         self.wait_eleVisible(loc.password_login_button, doc=doc)
         time.sleep(1)
         self.click_element(loc.password_login_button, doc=doc)
         self.input_text(loc.user_name, username, doc=doc)
         self.input_text(loc.pass_word, passwd, doc=doc)
         self.click_element(loc.login_button, doc=doc)
+
     def register(self,username):
+        '''
+        注册登录
+        :param username: 手机号
+        :return:
+        '''
         doc = '登录页面_注册功能_验证码注册'
         self.wait_eleVisible(loc.phone_name,doc=doc)
         self.input_text(loc.phone_name,username,doc=doc)
@@ -44,33 +74,3 @@ class LoginPage(BasePage):
         time.sleep(5)
         for number_code in code_list:
             self.click_element(number[number_code])
-    #     doc = "登录页面_登录功能_登录操作"
-    #     self.wait_eleVisible(loc.passwd_login_style, doc=doc)
-    #     time.sleep(1)
-    #     try:
-    #         self.get_element(loc.remember_passwd, doc=doc)
-    #         self.clear_text(loc.name_text, doc=doc)
-    #         self.input_text(loc.name_text, username, doc=doc)
-    #         self.clear_text(loc.passwd_text, doc=doc)
-    #         self.input_text(loc.passwd_text, passwd, doc=doc)
-    #         self.click_element(loc.login_button, doc=doc)
-    #
-    #     except:
-    #         self.click_element(loc.passwd_login_style, doc=doc)
-    #         self.clear_text(loc.name_text, doc=doc)
-    #         self.input_text(loc.name_text, username, doc=doc)
-    #         self.clear_text(loc.passwd_text, doc=doc)
-    #         self.input_text(loc.passwd_text, passwd, doc=doc)
-    #         self.click_element(loc.login_button, doc=doc)
-    #
-    # # 注册入口
-    # def register(self):
-    #     doc = "登录页面_注册入口"
-    #     self.wait_eleVisible(loc.register_enter, doc=doc)
-    #     self.click_element(loc.register_enter, doc)
-    #
-    # # 异常提示
-    # def get_errorMsg_from_loginArea(self):
-    #     doc = "登录页面_登录功能_异常登录"
-    #     self.wait_eleVisible(loc.errorMsg_from_loginArea, doc=doc)
-    #     return self.get_text(loc.errorMsg_from_loginArea, doc)
