@@ -23,7 +23,7 @@ class TestShopkeeperRecommened:
         # 首页去登录
         access_to_order[1].index_to_login()
         # 登录页输入账号密码
-        LoginPage(access_to_order[0]).login(LD.success_data[0]['user'], LD.success_data[0]['passwd'])
+        LoginPage(access_to_order[0]).password_login(LD.success_data[0]['user'], LD.success_data[0]['passwd'])
         # 店主推荐下单
         time.sleep(2)
         access_to_order[1].Shopkeeper_recommended_order()

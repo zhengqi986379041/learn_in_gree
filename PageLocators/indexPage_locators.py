@@ -21,3 +21,7 @@ class IndexPageLocator:
     floor_purchase = (By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[3]/div[3]/div[5]/div/div/div[2]/div/div/div/div/div/div[1]/div[1]/p[1]')
     # 楼层名位置
     floor_location = (By.XPATH, '/html/body/div[1]/div[1]/div[1]/div[3]/div[3]/div[5]/div/div/div[1]/div/div/div/div[1]')
+
+
+    # 导航栏-首页
+    index_button = (By.XPATH, '/html/body/div[1]/div[1]/div[4]/div/div[1]/div[2]/span')

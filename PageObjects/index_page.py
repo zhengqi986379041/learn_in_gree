@@ -1,5 +1,5 @@
 from PageLocators.indexPage_locators import IndexPageLocator as loc
-from PageLocators.mePage_locators import MePageLocator
+from PageLocators.myPage_locators import MyPageLocator
 from Common.basePage import BasePage
 
 import time
@@ -13,7 +13,7 @@ class IndexPage(BasePage):
         doc = "首页_等待加载完成操作"
         # 如果存在就返回true，如果不存在就返回false
         try:
-            self.wait_eleVisible(loc.is_express_news, doc=doc)
+            self.wait_eleVisible(loc.index_button, doc=doc)
             # WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(loc.is_express_news))
             return True
         except:
@@ -48,9 +48,9 @@ class IndexPage(BasePage):
         self.wait_eleVisible(loc.bottom_me, doc=doc)
         self.click_element(loc.bottom_me, doc)
         try:
-            self.wait_eleVisible(MePageLocator.click_login, doc= doc)
+            self.wait_eleVisible(MyPageLocator.click_login, doc= doc)
         except:
             self.click_element(loc.bottom_me, doc)
-        self.wait_eleVisible(MePageLocator.click_login, doc= doc)
-        self.click_element(MePageLocator.click_login, doc)
+        self.wait_eleVisible(MyPageLocator.click_login, doc= doc)
+        self.click_element(MyPageLocator.click_login, doc)
 
